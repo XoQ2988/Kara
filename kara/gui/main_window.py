@@ -14,16 +14,12 @@ from PySide6.QtWidgets import QMainWindow, QListWidgetItem, QSplitter, QFileSyst
     QTextEdit, QGroupBox, QFormLayout, QHBoxLayout, QButtonGroup, QToolButton, QStatusBar, QLabel, \
     QFileDialog, QMessageBox, QApplication, QComboBox, QSpinBox, QProgressBar, QWidget
 
-from src.commands.add_bubble import AddBubbleCommand
-from src.commands.move_bubble import MoveBubbleCommand
-from src.commands.remove_bubble import RemoveBubbleCommand
-from src.controllers.annotation import AnnotationController, AnnotationData
-from src.controllers.detection import SpeechBubbleDetector, Detection
-from src.controllers.ocr import OCREngine
-from src.controllers.undo_redo import UndoRedoController
-from src.gui.item.moveable_rect_item import MoveableRectItem
-from src.gui.viewer.panel_viewer import PanelViewer
-from src.utils.qt_hints import Qt, QFrame, QSizePolicy, QGraphicsItem
+from kara.core.annotation import AnnotationController, AnnotationData
+from kara.core.detection import SpeechBubbleDetector, Detection
+from kara.core.history import UndoRedoController, MoveBubbleCommand, AddBubbleCommand, RemoveBubbleCommand
+from kara.core.ocr import OCREngine
+from kara.gui.qt_hints import Qt, QFrame, QSizePolicy, QGraphicsItem
+from kara.gui.widgets import MoveableRectItem, PanelViewer
 
 
 class MainWindow(QMainWindow):
